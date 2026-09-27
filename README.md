@@ -12,18 +12,19 @@ bez serwera, bez Pythona, bez chmury.
 - Rozszerzenie Chrome (**Manifest V3**), gotowe do wgrania w trybie deweloperskim
 - Czyta napisy odtwarzacza i zamienia je na mowę
 - Obsługiwane serwisy: **Netflix, YouTube, Prime Video, Amazon Video, iQ / iQIYI, Dailymotion, Rumble**
+  (Netflix i Prime Video natywnie, pozostałe przez Immersive Translate — patrz niżej)
 - Panel sterowania na stronie filmu: **prędkość czytania** i **kalibracja opóźnienia** (offset w ms)
 
 ### Napisy — natywnie albo przez Immersive Translate
 
 - **Netflix i Prime Video** — lektor czyta napisy **natywnie**, od razu po włączeniu
   rozszerzenia. Nie trzeba nic dodatkowego.
-- **YouTube** — lektor nie czyta napisów YouTube sam w sobie. Żeby działało,
-  potrzebne jest rozszerzenie **Immersive Translate**: to ono podaje napisy,
-  a Lektor Multilanguage je wypowiada. Immersive Translate pobiera się
-  bezpłatnie z **Chrome Web Store**.
-- W praktyce: **Netflix + Prime Video = działa od razu**,
-  **YouTube = najpierw Immersive Translate** (jedna instalacja, raz).
+- **Pozostałe serwisy (YouTube, Amazon Video, iQ / iQIYI, Dailymotion, Rumble)**
+  — lektor nie czyta ich napisów sam w sobie. Żeby zadziałały, potrzebne jest
+  rozszerzenie **Immersive Translate**: to ono podaje napisy, a Lektor Multilanguage
+  je wypowiada. Immersive Translate pobiera się bezpłatnie z **Chrome Web Store**.
+- W skrócie: **Netflix + Prime Video = działa od razu**,
+  **wszystko inne = najpierw Immersive Translate** (jedna instalacja, raz).
 
 ### Silnik i głosy
 - Wbudowany silnik **sherpa-onnx** (ONNX Runtime) skompilowany do **WebAssembly** — synteza leci w przeglądarce
@@ -41,8 +42,8 @@ bez serwera, bez Pythona, bez chmury.
 2. W Chrome wejdź na `chrome://extensions` i włącz **Tryb deweloperski**
 3. Kliknij **Wczytaj rozpakowane** i wskaż folder `Lektor Multilanguage`
 4. Przypnij ikonę lektora i włącz go na stronie z filmem
-5. Chcesz **YouTube**? Zainstaluj też **Immersive Translate** z Chrome Web Store —
-   Netflix i Prime Video działają bez niego
+5. Chcesz **YouTube, Amazon Video, iQ / iQIYI, Dailymotion lub Rumble**? Zainstaluj
+   też **Immersive Translate** z Chrome Web Store — Netflix i Prime Video działają bez niego
 
 ### Rozmiar
 - ZIP: ok. **229 MB**
@@ -64,9 +65,10 @@ bez serwera, bez Pythona, bez chmury.
   dostępność, oglądanie bez dźwięku, walidacja tłumaczeń i instrukcji głosowych.
 - **Uwaga praktyczna:** pierwsze wypowiedzenie po zmianie modelu potrafi potrwać
   sekundę–dwie (rozruch silnika WASM), więc warto dać lektorowi chwilę na start.
-- **YouTube wymaga dokładki:** to jedyny duży serwis, gdzie lektor nie wystarcza
-  sam — potrzebny jest **Immersive Translate**. W zamian Netflix i Prime Video
-  czytają napisy natywnie, bez żadnych zależności.
+- **Zależność od Immersive Translate:** tylko Netflix i Prime Video czytają napisy
+  natywnie, bez niczego dodatkowego. Pozostałe serwisy (YouTube, Amazon Video,
+  iQ / iQIYI, Dailymotion, Rumble) potrzebują **Immersive Translate** — rozszerzenia
+  pobieranego z Chrome Web Store. Jedna instalacja, raz, a działa na wszystkich.
 
 ## Pobieranie
 
