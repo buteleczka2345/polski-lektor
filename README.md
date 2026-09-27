@@ -14,6 +14,17 @@ bez serwera, bez Pythona, bez chmury.
 - Obsługiwane serwisy: **Netflix, YouTube, Prime Video, Amazon Video, iQ / iQIYI, Dailymotion, Rumble**
 - Panel sterowania na stronie filmu: **prędkość czytania** i **kalibracja opóźnienia** (offset w ms)
 
+### Napisy — natywnie albo przez Immersive Translate
+
+- **Netflix i Prime Video** — lektor czyta napisy **natywnie**, od razu po włączeniu
+  rozszerzenia. Nie trzeba nic dodatkowego.
+- **YouTube** — lektor nie czyta napisów YouTube sam w sobie. Żeby działało,
+  potrzebne jest rozszerzenie **Immersive Translate**: to ono podaje napisy,
+  a Lektor Multilanguage je wypowiada. Immersive Translate pobiera się
+  bezpłatnie z **Chrome Web Store**.
+- W praktyce: **Netflix + Prime Video = działa od razu**,
+  **YouTube = najpierw Immersive Translate** (jedna instalacja, raz).
+
 ### Silnik i głosy
 - Wbudowany silnik **sherpa-onnx** (ONNX Runtime) skompilowany do **WebAssembly** — synteza leci w przeglądarce
 - Katalog **236 modeli głosowych w 51 językach**: VITS (229), Matcha (4), Kokoro (3)
@@ -30,6 +41,8 @@ bez serwera, bez Pythona, bez chmury.
 2. W Chrome wejdź na `chrome://extensions` i włącz **Tryb deweloperski**
 3. Kliknij **Wczytaj rozpakowane** i wskaż folder `Lektor Multilanguage`
 4. Przypnij ikonę lektora i włącz go na stronie z filmem
+5. Chcesz **YouTube**? Zainstaluj też **Immersive Translate** z Chrome Web Store —
+   Netflix i Prime Video działają bez niego
 
 ### Rozmiar
 - ZIP: ok. **229 MB**
@@ -51,6 +64,9 @@ bez serwera, bez Pythona, bez chmury.
   dostępność, oglądanie bez dźwięku, walidacja tłumaczeń i instrukcji głosowych.
 - **Uwaga praktyczna:** pierwsze wypowiedzenie po zmianie modelu potrafi potrwać
   sekundę–dwie (rozruch silnika WASM), więc warto dać lektorowi chwilę na start.
+- **YouTube wymaga dokładki:** to jedyny duży serwis, gdzie lektor nie wystarcza
+  sam — potrzebny jest **Immersive Translate**. W zamian Netflix i Prime Video
+  czytają napisy natywnie, bez żadnych zależności.
 
 ## Pobieranie
 
